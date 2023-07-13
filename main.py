@@ -1,3 +1,6 @@
+import requests
+
+
 def summ(a):
     summ = ''
     for value in a:
