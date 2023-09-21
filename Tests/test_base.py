@@ -1,6 +1,6 @@
+from FW.application_manager import ApplicationManager
 
 
 class TestBase:
 
-    def temp123(self):
-        print('123123')
+    APP = ApplicationManager()
