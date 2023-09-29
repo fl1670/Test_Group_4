@@ -3,6 +3,9 @@ from Tests.pre_conditions import PreConditions
 
 class TestMain(PreConditions):
 
+    def test_temp(self):
+        print(self.APP.group_data.users)
+
     def test_search(self):
         self.APP.web_main.click_news_tabs_tab_auto()
         self.APP.web_auto_mail.input_text_in_search('Новый Hyundai Santa Fe')
