@@ -25,12 +25,3 @@ class Token(ApiBase):
         response = requests.post(url, data=body, headers=headers)
 
         return response.json()
-
-
-
-
-
-
-
-
-

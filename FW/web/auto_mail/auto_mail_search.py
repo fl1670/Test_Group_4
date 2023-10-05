@@ -1,8 +1,11 @@
+import allure
+
 from FW.web.auto_mail.auto_mail import AutoMail
 
 
 class AutoMailSearch(AutoMail):
 
+    @allure.step('Получить текст из поисковой выдачи')
     def get_text_search_result(self):
         frame = self.get_driver().find_element('xpath', '//*[@id="grid"]/div[2]/div/iframe')
         self.get_driver().switch_to.frame(frame)
