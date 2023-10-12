@@ -13,6 +13,13 @@ class FWBase:
             self.manager.driver_instance.start_driver()
         return self.manager.driver_instance.driver
 
+    def get_base_url(self):
+        return self.manager.group_data.base_url
+
+    @allure.step('request_log')
+    def request_logs(self, type='', url='', headers='', body="", status_code='', response_text='', params=''):
+        pass
+
     @allure.step('find_element {locator}')
     def find_element(self, locator, wait=30):
         try:

@@ -2,6 +2,12 @@
 
 class GroupData:
 
+    base_url = 'https://api-test-compose.gandiva.ru'
+
+    access_token = ''
+    token_type = ''
+    refresh_token = ''
+
     users = {
         'user1': {
             'log': 'gandiva_test_user1@mail.ru',
