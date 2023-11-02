@@ -1,10 +1,10 @@
 from FW.FW_base import FWBase
 
-
 import allure
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class WebBase(FWBase):
@@ -30,11 +30,23 @@ class WebBase(FWBase):
         web_element = self.find_element(locator)
         web_element.send_keys(text)
 
+    def scroll_to_element(self, locator):
+        element = self.find_element(locator).location_once_scrolled_into_view
+        script = "window.scrollBy(" + str(element['x'] - 180) + ", " + str(element['y'] - 180) + ")"
+        self.get_driver().execute_script(script)
+
+    @allure.step("move_to_element")
+    def move_to_element(self, locator):
+        actions = ActionChains(self.get_driver())
+        element = self.find_element(locator)
+        actions.move_to_element(element)
+        actions.perform()
+
+
     @allure.step('find_element {locator}')
     def find_element(self, locator, wait=30):
         try:
-            web_element = WebDriverWait(self.get_driver(), wait).until(EC.presence_of_element_located(locator))
-            return web_element
+            return WebDriverWait(self.get_driver(), wait).until(EC.presence_of_element_located(locator))
         except:
             pass
 

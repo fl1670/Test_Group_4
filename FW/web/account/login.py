@@ -9,10 +9,6 @@ class Locator:
     input_login = (By.XPATH, '//input[@id="Input_UserName"]')
     input_password = (By.XPATH, '//input[@id="Input_Password"]')
     local_submit_button = (By.XPATH, '//button[@id="login-submit"]')
-    button_remember_me = (By.XPATH, '//input[@id="Input_RememberMe"]')
-    error_invalid_login = (By.XPATH, '//div[contains(@class, "validation-summary-errors")]')
-    error_empty_password = (By.XPATH, '//span[@id="Input_Password-error"]')
-    error_empty_login = (By.XPATH, '//span[@id="Input_UserName-error"]')
 
 
 class Login(AnyPage):
@@ -42,8 +38,3 @@ class Login(AnyPage):
     def g1_click_button_sign_in(self):
         self.click_element(Locator.local_submit_button)
         return self
-
-
-
-
-

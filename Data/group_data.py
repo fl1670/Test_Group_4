@@ -1,7 +1,7 @@
 class GroupData:
 
-    base_url = 'https://api-test-compose.gandiva.ru'
-    base_url_web = 'https://web-test-compose.gandiva.ru'
+    base_url = 'https://api-preprod-compose.gandiva.ru'
+    base_url_web = 'https://web-preprod-compose.gandiva.ru'
 
     access_token = ''
     token_type = ''

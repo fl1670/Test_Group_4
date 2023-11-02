@@ -4,6 +4,8 @@ from FW.api.token import Token
 from FW.web.account.login import Login
 from FW.web.any_page import AnyPage
 from FW.web.driver_Instance import DriverInstance
+from FW.web.main import Main
+from FW.web.request_list.request_list_my import RequestListMy
 from FW.work_with_time import WorkWithTime
 
 
@@ -18,3 +20,5 @@ class ApplicationManager:
         self.api_requests = Requests(self)
         self.time = WorkWithTime()
         self.login = Login(self)
+        self.main = Main(self)
+        self.request_list_my = RequestListMy(self)
